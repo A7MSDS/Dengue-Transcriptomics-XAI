@@ -31,6 +31,6 @@ ggplot(top_20_imp, aes(x = reorder(Gene, Gini_Score), y = Gini_Score)) +
   )
 dev.off()
 
- cat("أعلى 5 جينات في الأهمية هي:\n")
+
 print(head(top_20_imp, 5))
  
