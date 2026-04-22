@@ -24,7 +24,7 @@ Dengue Hemorrhagic Fever (DHF) is a severe, life-threatening complication of den
 *Note: All primers are optimized for a unified melting temperature ($T_m$) of 60.0°C ± 0.4°C.*
 
 ## ⚙️ How to Reproduce
-1. Clone this repository: `git clone https://github.com/YourUsername/Dengue-Transcriptomics-XAI.git`
+1. Clone this repository: `git clone https://github.com/A7MSDS/Dengue-Transcriptomics-XAI.git`
 2. Open the `.Rproj` file in RStudio.
 3. Run the scripts sequentially starting from `01_Data_Prep.R`.
 
