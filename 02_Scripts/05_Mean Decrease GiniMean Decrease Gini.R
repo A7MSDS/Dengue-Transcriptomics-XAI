@@ -1,30 +1,24 @@
-# ============================================================
-# سكريبت (5): استخراج الأهمية الأصلية للجينات (Gini Index)
-# ============================================================
+
 
 rm(list = ls())
 library(ggplot2)
 library(randomForest)
 
-# 1. تحميل الداتا والموديل
 load("03_Clean_Data/GSE51808_Cleaned.RData")
 load("05_Models/Final_RF_Model.RData")
 
-# 2. استخراج الأهمية (Mean Decrease Gini) مباشرة من قلب الموديل!
 imp_matrix <- importance(final_rf_model)
 imp_df <- data.frame(
   Gene = rownames(imp_matrix),
   Gini_Score = imp_matrix[, "MeanDecreaseGini"]
 )
 
-# 3. ترتيب الجينات التنازلي واختيار أعلى 20 جين
 imp_df <- imp_df[order(imp_df$Gini_Score, decreasing = TRUE), ]
 top_20_imp <- imp_df[1:20, ]
 
-# 4. رسم الأعمدة (هنا هتشوف الألوان والأطوال الحقيقية!)
 png("04_Results/RF_Feature_Importance.png", width = 1000, height = 800, res = 150)
 ggplot(top_20_imp, aes(x = reorder(Gene, Gini_Score), y = Gini_Score)) +
-  geom_bar(stat = "identity", fill = "#c0392b", color = "black") + # لون أحمر داكن
+  geom_bar(stat = "identity", fill = "#c0392b", color = "black") +    
   coord_flip() +
   labs(title = "Biomarker Importance: Why the Model Predicted DHF?",
        subtitle = "Based on Mean Decrease Gini (Internal Decision Power)",
@@ -37,7 +31,6 @@ ggplot(top_20_imp, aes(x = reorder(Gene, Gini_Score), y = Gini_Score)) +
   )
 dev.off()
 
-# 5. طباعة أول 5 جينات في الشاشة للتأكيد
-cat("أعلى 5 جينات في الأهمية هي:\n")
+ cat("أعلى 5 جينات في الأهمية هي:\n")
 print(head(top_20_imp, 5))
-cat("\n✅ تم الحفظ! افتح صورة RF_Feature_Importance.png من مجلد النتائج.\n")
+ 
