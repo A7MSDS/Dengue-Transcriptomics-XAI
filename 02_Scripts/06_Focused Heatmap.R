@@ -1,7 +1,6 @@
 
 rm(list = ls())
-if(!require(pheatmap)) install.packages("pheatmap")
-if(!require(randomForest)) install.packages("randomForest")
+
 library(pheatmap)
 library(randomForest)
 
