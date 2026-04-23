@@ -14,7 +14,6 @@ var_imp <- importance(initial_rf)
 top_genes_df <- var_imp[order(var_imp[, "MeanDecreaseGini"], decreasing = TRUE), ]
 top_20_genes <- rownames(top_genes_df)[1:20]
 
-# حفظ الجينات في ملف CSV داخل مجلد 04_Results
 write.csv(data.frame(Gene_Symbol = top_20_genes, Importance_Score = top_genes_df[1:20, "MeanDecreaseGini"]),
           file = "04_Results/Top_20_Biomarkers.csv", row.names = FALSE)
 
