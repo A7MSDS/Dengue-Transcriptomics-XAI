@@ -36,8 +36,5 @@ df_agg$Symbol <- NULL
 train_data <- as.data.frame(t(df_agg))
 train_data$Condition <- as.factor(pheno_clean$Condition)
 
-cat("4. جاري حفظ البيانات النظيفة في مجلد 03_Clean_Data...\n")
-# حفظ الجدول النهائي كملف RData جاهز للاستخدام في السكريبت القادم
 save(train_data, file = "03_Clean_Data/GSE51808_Cleaned.RData")
 
-cat("✅ اكتمل التجهيز بنجاح! يمكنك الآن إغلاق هذا السكريبت.\n")
