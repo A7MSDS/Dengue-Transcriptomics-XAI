@@ -9,7 +9,7 @@ An Explainable AI approach for Rapid Multiplex RT-PCR Assay Design in Dengue Hae
 This repository contains the bioinformatics pipeline, Explainable AI (XAI) models, and primer design data for the master's thesis project: **"Translating Dengue Transcriptomics into Clinical Diagnostics: An Explainable AI Approach for Rapid Multiplex RT-PCR Assay Design."**
 
 ## 📌 Project Overview
-Dengue Hemorrhagic Fever (DHF) is a severe, life-threatening complication of dengue infection. This project leverages Machine Learning (Random Forest) to classify patient samples based on transcriptomic data (GSE51808). Utilizing the Mean Decrease Gini index as a Global Explainer (XAI), we identified top predictive biomarkers (**NOTCH4, PHTF1, and YIPF1**). These findings were translated into a clinical setting by designing a strict, single-tube Multiplex RT-PCR assay.
+Dengue Hemorrhagic Fever (DHF) is a severe, life-threatening complication of dengue infection. This project leverages Machine Learning (Random Forest) to classify patient samples based on transcriptomic data (GSE51808). Utilizing the Mean Decrease Gini index as a Global Explainer (XAI), we identified top predictive biomarkers (NOTCH4, PHTF1, and YIPF1). These findings were translated into a clinical setting by designing a strict, single-tube Multiplex RT-PCR assay.
 
 ## 📂 Repository Structure
 * `02_Scripts/`: R scripts for data preprocessing, Random Forest training, and Gini Index extraction.
@@ -21,7 +21,7 @@ Dengue Hemorrhagic Fever (DHF) is a severe, life-threatening complication of den
 1. **NOTCH4** (Product Size: 100 bp)
 2. **PHTF1** (Product Size: 134 bp)
 3. **YIPF1** (Product Size: 189 bp)
-*Note: All primers are optimized for a unified melting temperature ($T_m$) of 60.0°C ± 0.4°C.*
+*Note: All primers are optimized for a unified melting temperature (T_m) of 60.0°C ± 0.4°C.*
 
 ## ⚙️ How to Reproduce
 1. Clone this repository: `git clone https://github.com/A7MSDS/Dengue-Transcriptomics-XAI.git`
